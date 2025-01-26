@@ -32,3 +32,44 @@ cd backend
 # or
 cd ai_models
 ```
+
+### Frontend Setup
+
+To set up the frontend using React, navigate to the `frontend` directory and initialize a new React project:
+
+```bash
+cd frontend
+npx create-react-app prisha-frontend
+cd prisha-frontend
+```
+
+This will create a new React project in the `frontend` directory.
+
+### Backend Setup
+
+For the backend, navigate to the `backend` directory and set up a Python virtual environment and a FastAPI project:
+
+```bash
+cd ../backend
+python3 -m venv venv
+source venv/bin/activate
+pip install fastapi uvicorn
+```
+
+Create a new file `main.py` with a basic FastAPI setup:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+```
+
+You can run the FastAPI server with:
+
+```bash
+uvicorn main:app --reload
+```
